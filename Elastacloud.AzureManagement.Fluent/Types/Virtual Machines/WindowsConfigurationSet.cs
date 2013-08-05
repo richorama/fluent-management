@@ -25,7 +25,12 @@ namespace Elastacloud.AzureManagement.Fluent.Types.VirtualMachines
         public string ComputerName { get; set; }
 
         /// <summary>
-        /// The admin password of the vm instance - the default username is Administrator
+        /// The admin username of the vm instance - the default username is Administrator
+        /// </summary>
+        public string AdminUsername { get; set; }
+
+        /// <summary>
+        /// The admin password of the vm instance
         /// </summary>
         public string AdminPassword { get; set; }
 
@@ -62,7 +67,8 @@ namespace Elastacloud.AzureManagement.Fluent.Types.VirtualMachines
                                        new XElement(Namespaces.NsWindowsAzure + "ConfigurationSetType", ConfigurationSetType.ToString()),
                                        new XElement(Namespaces.NsWindowsAzure + "ComputerName", namer.GetPureRandomValue().ToUpper()),
                                        new XElement(Namespaces.NsWindowsAzure + "AdminPassword", AdminPassword),
-                                       /*new XElement(Namespaces.NsWindowsAzure + "ResetPasswordOnFirstLogon", ResetPasswordOnFirstLogon.ToString(CultureInfo.InvariantCulture).ToLower()),*/
+                                       new XElement(Namespaces.NsWindowsAzure + "AdminUsername", AdminUsername),
+                /*new XElement(Namespaces.NsWindowsAzure + "ResetPasswordOnFirstLogon", ResetPasswordOnFirstLogon.ToString(CultureInfo.InvariantCulture).ToLower()),*/
                                        new XElement(Namespaces.NsWindowsAzure + "EnableAutomaticUpdates", EnableAutomaticUpdate.ToString(CultureInfo.InvariantCulture).ToLower()),
                                        new XElement(Namespaces.NsWindowsAzure + "TimeZone", TimeZone));
             //if (ComputerName != null)

@@ -159,12 +159,12 @@ namespace Elastacloud.AzureManagement.Fluent.Clients
                     linuxVirtualMachineProperty.KeyPairs.Add(new SSHKey(KeyType.KeyPair)
                     {
                         FingerPrint = serviceCertificate.ServiceCertificate.GetCertHashString(),
-                        Path = String.Format("/home/{0}/.ssh/id_rsa", linuxVirtualMachineProperty.UserName)
+                        Path = String.Format("/home/{0}/.ssh/id_rsa", linuxVirtualMachineProperty.AdministratorUsername)
                     });
                     linuxVirtualMachineProperty.PublicKeys.Add(new SSHKey(KeyType.PublicKey)
                     {
                         FingerPrint = serviceCertificate.ServiceCertificate.GetCertHashString(),
-                        Path = String.Format("/home/{0}/.ssh/authorized_keys", linuxVirtualMachineProperty.UserName)
+                        Path = String.Format("/home/{0}/.ssh/authorized_keys", linuxVirtualMachineProperty.AdministratorUsername)
                     });
                     linuxVirtualMachineProperty.DisableSSHPasswordAuthentication = true;
                 }

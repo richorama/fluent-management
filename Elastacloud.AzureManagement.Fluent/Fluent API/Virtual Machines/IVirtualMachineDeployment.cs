@@ -45,5 +45,13 @@ namespace Elastacloud.AzureManagement.Fluent.VirtualMachines
         /// Used to deploy the virtual machine 
         /// </summary>
         void Deploy();
+
+        /// <summary>
+        /// The setter for the admin account on the virtual machine
+        /// </summary>
+        /// <param name="username">The admin username</param>
+        /// <param name="password">The admin password</param>
+        /// <returns>A IVirtualMachineDeployment interface</returns>
+        IVirtualMachineDeployment WithUsernameAndPassword(string username, string password);
     }
 }

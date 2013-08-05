@@ -104,6 +104,7 @@ namespace Elastacloud.AzureManagement.Fluent.Types.VirtualMachines
             // build the windows configuration set
             var windows = new WindowsConfigurationSet
             {
+                AdminUsername = properties.AdministratorUsername ?? "admin",
                 AdminPassword = properties.AdministratorPassword ?? "ElastaPassword101",
                 ResetPasswordOnFirstLogon = true
             };
@@ -121,8 +122,8 @@ namespace Elastacloud.AzureManagement.Fluent.Types.VirtualMachines
                            let linux = new LinuxConfigurationSet()
                                {
                                    HostName = persistentVMRoleProperty.HostName, 
-                                   DisableSshPasswordAuthentication = persistentVMRoleProperty.DisableSSHPasswordAuthentication, 
-                                   UserName = persistentVMRoleProperty.UserName, 
+                                   DisableSshPasswordAuthentication = persistentVMRoleProperty.DisableSSHPasswordAuthentication,
+                                   UserName = persistentVMRoleProperty.AdministratorUsername, 
                                    UserPassword = persistentVMRoleProperty.AdministratorPassword, 
                                    KeyPairs = persistentVMRoleProperty.KeyPairs, 
                                    PublicKeys = persistentVMRoleProperty.PublicKeys

@@ -61,12 +61,17 @@ namespace Elastacloud.AzureManagement.Fluent.VirtualMachines.Classes
         /// </summary>
         public VmSize VmSize { get; set; }
         /// <summary>
-        /// The password for the windows Virtual machine
+        /// The password for the Virtual machine
         /// </summary>
         public string AdministratorPassword { get; set; }
         /// <summary>
+        /// The admin username to use for the Virtual Machine
+        /// </summary>
+        public string AdministratorUsername { get; set; }
+        /// <summary>
         /// The cloud services name used to deploy to 
         /// </summary>
+
         public string CloudServiceName { get; set; }
     }
 }

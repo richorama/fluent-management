@@ -39,10 +39,6 @@ namespace Elastacloud.AzureManagement.Fluent.VirtualMachines.Classes
         /// </summary>
         public string HostName { get; set; }
         /// <summary>
-        /// The username of the linux user
-        /// </summary>
-        public string UserName { get; set; }
-        /// <summary>
         /// The password auth and whether to only use SSH
         /// </summary>
         internal bool DisableSSHPasswordAuthentication { get; set; }
