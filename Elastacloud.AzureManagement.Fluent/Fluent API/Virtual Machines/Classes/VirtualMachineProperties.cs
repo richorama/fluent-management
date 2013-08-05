@@ -73,5 +73,7 @@ namespace Elastacloud.AzureManagement.Fluent.VirtualMachines.Classes
         /// </summary>
 
         public string CloudServiceName { get; set; }
+
+        public string ComputerName { get; set; }
     }
 }

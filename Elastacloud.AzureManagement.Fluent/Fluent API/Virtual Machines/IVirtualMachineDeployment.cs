@@ -9,6 +9,7 @@
 
 using Elastacloud.AzureManagement.Fluent.Commands.VirtualMachines;
 using Elastacloud.AzureManagement.Fluent.Types;
+using System;
 
 namespace Elastacloud.AzureManagement.Fluent.VirtualMachines
 {
@@ -53,5 +54,9 @@ namespace Elastacloud.AzureManagement.Fluent.VirtualMachines
         /// <param name="password">The admin password</param>
         /// <returns>A IVirtualMachineDeployment interface</returns>
         IVirtualMachineDeployment WithUsernameAndPassword(string username, string password);
+
+        IVirtualMachineDeployment WithComputerName(string computerName);
+
+        IVirtualMachineDeployment WithDeploymentType(string customTemplateName);
     }
 }

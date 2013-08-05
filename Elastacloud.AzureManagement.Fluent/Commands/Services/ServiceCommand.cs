@@ -16,6 +16,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using Elastacloud.AzureManagement.Fluent.Commands.Parsers;
 using Elastacloud.AzureManagement.Fluent.Helpers;
+using System.IO;
 
 namespace Elastacloud.AzureManagement.Fluent.Commands.Services
 {
@@ -268,7 +269,20 @@ namespace Elastacloud.AzureManagement.Fluent.Commands.Services
             // wait for up to 30 minutes - if a deployment takes longer than that ... it's probably HPC!
             SitAndWait.WaitOne(200000);
             if (_exception != null)
-                throw _exception;
+            {
+                if (_exception is System.Net.WebException)
+                {
+                    using (var sr = new StreamReader((_exception as System.Net.WebException).Response.GetResponseStream()))
+                    {
+                        var message = sr.ReadToEnd();
+                        throw new ApplicationException(message, _exception);
+                    }
+                }
+                else
+                {
+                    throw _exception;
+                }
+            }
         }
 
         #endregion

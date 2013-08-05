@@ -60,17 +60,17 @@ namespace Elastacloud.AzureManagement.Fluent.Types.VirtualMachines
         /// <returns>An XElement </returns>
         public override XElement GetXmlTree()
         {
-            var namer = new RandomAccountName();
+            
             // if the timezone is set to null then set it GMT
             TimeZone = TimeZone ?? "GMT Standard Time";
             var element = new XElement(Namespaces.NsWindowsAzure + "ConfigurationSet",
                                        new XElement(Namespaces.NsWindowsAzure + "ConfigurationSetType", ConfigurationSetType.ToString()),
-                                       new XElement(Namespaces.NsWindowsAzure + "ComputerName", namer.GetPureRandomValue().ToUpper()),
+                                       new XElement(Namespaces.NsWindowsAzure + "ComputerName", ComputerName),
                                        new XElement(Namespaces.NsWindowsAzure + "AdminPassword", AdminPassword),
-                                       new XElement(Namespaces.NsWindowsAzure + "AdminUsername", AdminUsername),
                 /*new XElement(Namespaces.NsWindowsAzure + "ResetPasswordOnFirstLogon", ResetPasswordOnFirstLogon.ToString(CultureInfo.InvariantCulture).ToLower()),*/
                                        new XElement(Namespaces.NsWindowsAzure + "EnableAutomaticUpdates", EnableAutomaticUpdate.ToString(CultureInfo.InvariantCulture).ToLower()),
-                                       new XElement(Namespaces.NsWindowsAzure + "TimeZone", TimeZone));
+                                       new XElement(Namespaces.NsWindowsAzure + "TimeZone", TimeZone)
+                                       /*new XElement(Namespaces.NsWindowsAzure + "AdminUsername", AdminUsername)*/);
             //if (ComputerName != null)
             //    element.Add(new XElement(Namespaces.NsWindowsAzure + "ComputerName",
             //                             ComputerName.ToString(CultureInfo.InvariantCulture)));

@@ -76,7 +76,6 @@ namespace Elastacloud.AzureManagement.Fluent.Types.VirtualMachines
         /// <returns>An XElement </returns>
         public XElement GetXmlTree()
         {
-            var namer = new RandomAccountName();
             var element = new XElement(Namespaces.NsWindowsAzure + "Role",
                                        new XElement(Namespaces.NsWindowsAzure + "RoleName", RoleName),
                                        new XElement(Namespaces.NsWindowsAzure + "RoleType", RoleType));
@@ -101,11 +100,13 @@ namespace Elastacloud.AzureManagement.Fluent.Types.VirtualMachines
         /// <returns></returns>
         public static PersistentVMRole AddAdhocWindowsRoleTemplate(WindowsVirtualMachineProperties properties)
         {
+            var namer = new RandomAccountName();
             // build the windows configuration set
             var windows = new WindowsConfigurationSet
             {
                 AdminUsername = properties.AdministratorUsername ?? "admin",
                 AdminPassword = properties.AdministratorPassword ?? "ElastaPassword101",
+                ComputerName = properties.ComputerName ?? namer.GetPureRandomValue().ToUpper(),
                 ResetPasswordOnFirstLogon = true
             };
             return GetAdHocTemplate(properties, windows);

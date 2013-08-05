@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elastacloud.AzureManagement
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elastacloud.AzureManagement.ScriptMapper.Linux", "Elastacloud.AzureManagement.ScriptMapper.Linux\Elastacloud.AzureManagement.ScriptMapper.Linux.csproj", "{5224B49E-B6B8-425B-87FC-FE65A7C85E91}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaTest", "RaTest\RaTest.csproj", "{FEAB2D84-4AB4-4231-A154-E28C10C07E1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,10 @@ Global
 		{5224B49E-B6B8-425B-87FC-FE65A7C85E91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5224B49E-B6B8-425B-87FC-FE65A7C85E91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5224B49E-B6B8-425B-87FC-FE65A7C85E91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEAB2D84-4AB4-4231-A154-E28C10C07E1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEAB2D84-4AB4-4231-A154-E28C10C07E1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEAB2D84-4AB4-4231-A154-E28C10C07E1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEAB2D84-4AB4-4231-A154-E28C10C07E1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -13,6 +13,7 @@ using Elastacloud.AzureManagement.Fluent.Helpers;
 using Elastacloud.AzureManagement.Fluent.Helpers.PublishSettings;
 using Elastacloud.AzureManagement.Fluent.Types;
 using Elastacloud.AzureManagement.Fluent.VirtualMachines.Classes;
+using System;
 
 namespace Elastacloud.AzureManagement.Fluent.VirtualMachines
 {
@@ -149,6 +150,18 @@ namespace Elastacloud.AzureManagement.Fluent.VirtualMachines
         {
             Properties.AdministratorUsername = username;
             Properties.AdministratorPassword = password;
+            return this;
+        }
+
+        IVirtualMachineDeployment IVirtualMachineDeployment.WithComputerName(string computerName)
+        {
+            Properties.ComputerName = computerName;
+            return this;
+        }
+
+        IVirtualMachineDeployment IVirtualMachineDeployment.WithDeploymentType(string customTemplateName)
+        {
+            Properties.CustomTemplateName = customTemplateName;
             return this;
         }
 
