@@ -165,6 +165,18 @@ namespace Elastacloud.AzureManagement.Fluent.VirtualMachines
             return this;
         }
 
+        IVirtualMachineDeployment IVirtualMachineDeployment.WithDeploymentName(string deploymentName)
+        {
+            Properties.DeploymentName = deploymentName;
+            return this;
+        }
+
+        IVirtualMachineDeployment IVirtualMachineDeployment.WithRoleName(string roleName)
+        {
+            Properties.RoleName = roleName;
+            return this;
+        }
+
         /// <summary>
         /// Used to deploy the virtual machine 
         /// </summary>

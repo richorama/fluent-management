@@ -18,6 +18,8 @@ namespace RaTest
                     .GetVirtualMachinesManager()
                     .AddPublishSettingsFromFile(@"..\..\credentials.publishsettings")
                     .CreateVirtualMachineDeployment()
+                    .WithRoleName("RARole")
+                    .WithDeploymentName("RADeployment")
                     .AddToExistingCloudServiceWithName("two10ra")
                     .WithUsernameAndPassword("rich", "E3orange")
                     .WithVmOfSize(Elastacloud.AzureManagement.Fluent.Types.VmSize.Small)

@@ -58,5 +58,7 @@ namespace Elastacloud.AzureManagement.Fluent.VirtualMachines
         IVirtualMachineDeployment WithComputerName(string computerName);
 
         IVirtualMachineDeployment WithDeploymentType(string customTemplateName);
+        IVirtualMachineDeployment WithRoleName(string roleName);
+        IVirtualMachineDeployment WithDeploymentName(string deploymentName);
     }
 }
